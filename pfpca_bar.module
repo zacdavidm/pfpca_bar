@@ -1,0 +1,100 @@
+<?php
+
+function curPageURL() {
+ $pageURL = 'http';
+ if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"]== "on") {$pageURL .= "s";}
+ $pageURL .= "://";
+ $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+ return $pageURL;
+}
+function pfpca_bar_page_alter(&$page){
+	$mod_path="/".drupal_get_path('module', 'pfpca_bar');
+  $site_domain=check_plain($_SERVER['HTTP_HOST']);
+	$account_in_out;
+	$account_user="";
+	$feedback_ref=urlencode(curPageURL());
+	$sites_list='
+	<div id="sites-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
+		<ul class="sites-list small-block-grid-3 menu">
+		  <li>
+			<a title="PF/PCA" href="">
+			  <img src="'.$mod_path.'/images/pfpca.png" alt="PF/PCA" />
+			  <span>PF/PCA</span>
+			</a>
+		  </li>
+		  <li>
+			<a title="Pittsburgh Filmmakers" href="">
+			  <img src="'.$mod_path.'/images/pf.png" alt="Pittsburgh Filmmakers" />
+			  <span>Pittsburgh Filmmakers</span>
+			</a>
+		  </li>
+		  <li>
+			<a title="Pittsburgh Center for the Arts" href="">
+			  <img src="'.$mod_path.'/images/pca.png" alt="Pittsburgh Center for the Arts" />
+			  <span>Pittsburgh Center for the Arts</span>
+			</a>
+		  </li>
+		  <li>
+			<a title="" href="">
+			  <img src="'.$mod_path.'/images/.png" alt="" />
+			  <span>Filmmakers Cinema</span>
+			</a>
+		  </li>
+		  <li>
+			<a title="" href="">
+			  <img src="'.$mod_path.'/images/.png" alt="" />
+			  <span>3 Rivers Film Fest</span>
+			</a>
+		  </li>
+      <li>
+      <a title="" href="">
+        <img src="'.$mod_path.'/images/.png" alt="" />
+        <span>Pittsburgh Biennial</span>
+      </a>
+      </li>
+		</ul>
+		<div class="reveal-drawer-footer">
+			<a href="">Site Descriptions</a>
+		</div>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>';
+	$notifications='
+  <div id="notifications-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
+		<iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/notifications/'.$site_domain.'?response_type=embed"></iframe>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>';
+  $feedback='
+  <div id="feedback-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
+    <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/feedback?response_type=embed&ref='.$feedback_ref.'"></iframe>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+  ';
+    $page['page_top']['pfpca_bar']=array(
+    '#markup'=>
+    '<div class="universal-bar">
+		<div class="row">
+		  <div class="left">
+			<ul class="title-area">
+			  <li class="name">
+			    <a href="/" rel="home"><img class="logo" src="'.$mod_path.'/images/.png" alt="PF/PCA"></a>
+			  </li>
+			</ul>
+		  </div>
+			<div class="right">
+				<ul class="menu inline-list">
+					<li><a title="Sites" href="#" data-reveal-id="sites-reveal-drawer"><i class="fa fa-th"></i><span class="show-for-medium-up">Sites</span></a>
+						'.$sites_list.'
+					</li>
+					<li><a title="Notifications" href="#" data-reveal-id="notifications-reveal-drawer"><i class="fa fa-bell"></i><span class="show-for-medium-up">Notifications</span></a>
+						'.$notifications.'
+					</li>
+					<li><a href="#" title="Feedback" data-reveal-id="feedback-reveal-drawer"><i class="fa fa-question-circle"></i><span class="show-for-medium-up">Feedback</span></a>'.$feedback.'
+					</li>
+				</ul>
+			</div>
+		</div>
+    </div>',
+    '#weight' => 26,
+    );
+
+}
