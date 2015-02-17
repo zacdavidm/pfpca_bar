@@ -15,7 +15,7 @@ function pfpca_bar_page_alter(&$page){
 	$feedback_ref=urlencode(curPageURL());
 	$sites_list='
 	<div id="sites-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
-		<ul class="sites-list small-block-grid-3 menu">
+		<ul class="sites-list small-block-grid-1 menu">
 		  <li>
 			<a title="PF/PCA" href="">
 			  <img src="'.$mod_path.'/images/pfpca.png" alt="PF/PCA" />
@@ -24,48 +24,48 @@ function pfpca_bar_page_alter(&$page){
 		  </li>
 		  <li>
 			<a title="Pittsburgh Filmmakers" href="">
-			  <img src="'.$mod_path.'/images/pf.png" alt="Pittsburgh Filmmakers" />
+			  <img src="'.$mod_path.'/images/pfpca_pf.png" alt="Pittsburgh Filmmakers" />
 			  <span>Pittsburgh Filmmakers</span>
 			</a>
 		  </li>
 		  <li>
 			<a title="Pittsburgh Center for the Arts" href="">
-			  <img src="'.$mod_path.'/images/pca.png" alt="Pittsburgh Center for the Arts" />
+			  <img src="'.$mod_path.'/images/pfpca_pca.png" alt="Pittsburgh Center for the Arts" />
 			  <span>Pittsburgh Center for the Arts</span>
 			</a>
 		  </li>
 		  <li>
 			<a title="" href="">
-			  <img src="'.$mod_path.'/images/.png" alt="" />
+			  <img src="'.$mod_path.'/images/pf_ch.png" alt="Pittsburgh Filmmakers Cinema" />
 			  <span>Filmmakers Cinema</span>
 			</a>
 		  </li>
 		  <li>
 			<a title="" href="">
-			  <img src="'.$mod_path.'/images/.png" alt="" />
+			  <img src="'.$mod_path.'/images/pf_ffh.png" alt="" />
 			  <span>3 Rivers Film Fest</span>
 			</a>
 		  </li>
       <li>
       <a title="" href="">
-        <img src="'.$mod_path.'/images/.png" alt="" />
+        <img src="'.$mod_path.'/images/pghbiennial.png" alt="" />
         <span>Pittsburgh Biennial</span>
       </a>
       </li>
 		</ul>
 		<div class="reveal-drawer-footer">
-			<a href="">Site Descriptions</a>
+			<a href="http://new.pittsburgharts.org">Site Descriptions</a>
 		</div>
 		<a class="close-reveal-modal">&#215;</a>
 	</div>';
 	$notifications='
   <div id="notifications-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
-		<iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/notifications/'.$site_domain.'?response_type=embed"></iframe>
+		<iframe class="fill-drawer" src="https://pfpca.org/notifications/'.$site_domain.'?response_type=embed"></iframe>
     <a class="close-reveal-modal">&#215;</a>
   </div>';
   $feedback='
   <div id="feedback-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
-    <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/feedback?response_type=embed&ref='.$feedback_ref.'"></iframe>
+    <iframe class="fill-drawer" src="https://pfpca.org/feedback?response_type=embed&ref='.$feedback_ref.'"></iframe>
     <a class="close-reveal-modal">&#215;</a>
   </div>
   ';
@@ -76,7 +76,7 @@ function pfpca_bar_page_alter(&$page){
 		  <div class="left">
 			<ul class="title-area">
 			  <li class="name">
-			    <a href="/" rel="home"><img class="logo" src="'.$mod_path.'/images/.png" alt="PF/PCA"></a>
+			    <a href="/" rel="home"><img class="logo" src="'.$mod_path.'/images/pfpca_logo_h45.png" alt="PF/PCA"></a>
 			  </li>
 			</ul>
 		  </div>
