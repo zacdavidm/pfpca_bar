@@ -15,7 +15,7 @@ function pfpca_bar_page_alter(&$page){
 	$feedback_ref=urlencode(curPageURL());
 	$sites_list='
 	<div id="sites-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
-		<ul class="sites-list small-block-grid-1 menu">
+		<ul class="sites-list menu">
 		  <li>
 			<a title="PF/PCA" href="">
 			  <img src="'.$mod_path.'/images/pfpca.png" alt="PF/PCA" />

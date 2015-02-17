@@ -8,6 +8,10 @@
 	overflow: hidden;
 }
 
+.universal-bar ul.title-area img.logo{
+	padding:0 .9375rem;
+}
+
 .universal-bar ul.menu.inline-list{
 	position:relative;
 	overflow:visible;
@@ -79,22 +83,22 @@
 	background-color:#fff;
 }
 
-#sites-reveal-drawer ul.sites-list{
-	padding:1rem;
+#sites-reveal-drawer ul.sites-list li{
+	margin-bottom:1rem;
 }
 
 #sites-reveal-drawer ul.sites-list a{
 	display:block;
-	text-align:center;
+}
+
+#sites-reveal-drawer ul.sites-list a img{
+	max-height:100px;
 }
 
 #sites-reveal-drawer ul.sites-list a span{
-	color:#222;
-	font-size:.85rem;
-	white-space:nowrap;
-	overflow:hidden;
-	text-overflow:ellipsis;
-	display:block;
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
 }
 
 .side-drawer .fill-drawer{
