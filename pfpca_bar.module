@@ -17,7 +17,7 @@ function pfpca_bar_page_alter(&$page){
 	<div id="sites-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
 		<ul class="sites-list menu">
 		  <li>
-			<a title="PF/PCA" href="new.pittsburgharts.org">
+			<a title="PF/PCA" href="http://new.pittsburgharts.org">
 			  <img src="'.$mod_path.'/images/pfpca.png" alt="PF/PCA" />
 			  <span>PF/PCA</span>
 			</a>
