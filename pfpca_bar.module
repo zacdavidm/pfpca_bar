@@ -17,38 +17,38 @@ function pfpca_bar_page_alter(&$page){
 	<div id="sites-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
 		<ul class="sites-list menu">
 		  <li>
-			<a title="PF/PCA" href="">
+			<a title="PF/PCA" href="new.pittsburgharts.org">
 			  <img src="'.$mod_path.'/images/pfpca.png" alt="PF/PCA" />
 			  <span>PF/PCA</span>
 			</a>
 		  </li>
 		  <li>
-			<a title="Pittsburgh Filmmakers" href="">
+			<a title="Pittsburgh Filmmakers" href="http://pfm.pittsburgharts.org">
 			  <img src="'.$mod_path.'/images/pfpca_pf.png" alt="Pittsburgh Filmmakers" />
 			  <span>Pittsburgh Filmmakers</span>
 			</a>
 		  </li>
 		  <li>
-			<a title="Pittsburgh Center for the Arts" href="">
+			<a title="Pittsburgh Center for the Arts" href="http://pca.pittsburgharts.org">
 			  <img src="'.$mod_path.'/images/pfpca_pca.png" alt="Pittsburgh Center for the Arts" />
 			  <span>Pittsburgh Center for the Arts</span>
 			</a>
 		  </li>
 		  <li>
-			<a title="" href="">
-			  <img src="'.$mod_path.'/images/pf_ch.png" alt="Pittsburgh Filmmakers Cinema" />
+			<a title="Filmmakers Cinema" href="http://theaters.pittsburgharts.org">
+			  <img src="'.$mod_path.'/images/pf_ch.png" alt="Filmmakers Cinema" />
 			  <span>Filmmakers Cinema</span>
 			</a>
 		  </li>
 		  <li>
-			<a title="" href="">
-			  <img src="'.$mod_path.'/images/pf_ffh.png" alt="" />
+			<a title="3 Rivers Film Festival" href="http://3rff.com">
+			  <img src="'.$mod_path.'/images/pf_ffh.png" alt="Three Rivers Film Festival" />
 			  <span>3 Rivers Film Fest</span>
 			</a>
 		  </li>
       <li>
-      <a title="" href="">
-        <img src="'.$mod_path.'/images/pghbiennial.png" alt="" />
+      <a title="Pittsburgh Biennial" href="http://pittsburghbiennial.org">
+        <img src="'.$mod_path.'/images/pghbiennial.png" alt="Pittsburgh Biennial" />
         <span>Pittsburgh Biennial</span>
       </a>
       </li>
