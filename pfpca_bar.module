@@ -8,6 +8,7 @@ function curPageURL() {
  return $pageURL;
 }
 function pfpca_bar_page_alter(&$page){
+  $notification_source="http://new.pittsburgharts.org/notifications";
 	$mod_path="/".drupal_get_path('module', 'pfpca_bar');
   $site_domain=check_plain($_SERVER['HTTP_HOST']);
 	$account_in_out;
@@ -60,7 +61,7 @@ function pfpca_bar_page_alter(&$page){
 	</div>';
 	$notifications='
   <div id="notifications-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
-		<iframe class="fill-drawer" src="https://pfpca.org/notifications/'.$site_domain.'?response_type=embed"></iframe>
+		<iframe class="fill-drawer" src="'.$notification_source.'/'.$site_domain.'?response_type=embed"></iframe>
     <a class="close-reveal-modal">&#215;</a>
   </div>';
   $feedback='
