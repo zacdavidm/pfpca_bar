@@ -90,7 +90,7 @@ function pfpca_bar_page_alter(&$page){
 					<li><a href="#" title="Feedback" data-reveal-id="feedback-reveal-drawer"><i class="fa fa-question-circle"></i><span class="show-for-medium-up">Feedback</span></a>'.$feedback.'
 					</li>
           <li class="name">
-  			    <a href="/" rel="home"><img class="logo" src="'.$mod_path.'/images/pfpca_black_logo_small.png" alt="PF/PCA"></a>
+  			    <a href="/" rel="home"><img class="logo" src="'.$mod_path.'/images/pfpca_black_logo_small.jpg" alt="PF/PCA"></a>
   			  </li>
 				</ul>
 			</div>
