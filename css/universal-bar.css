@@ -1,8 +1,8 @@
 .universal-bar{
 	background-color:#F0F0F0;
 	height:65px;
-	margin-top:10px;
-	margin-bottom:10px;
+	padding-top:10px;
+	padding-bottom:10px;
 }
 
 .universal-bar ul.title-area {
