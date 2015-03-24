@@ -1,6 +1,8 @@
 .universal-bar{
-	background-color:#E7E7E7;
-	height:45px;
+	background-color:#F0F0F0;
+	height:65px;
+	margin-top:10px;
+	margin-bottom:10px;
 }
 
 .universal-bar ul.title-area {
@@ -8,8 +10,8 @@
 	overflow: hidden;
 }
 
-.universal-bar ul.title-area img.logo{
-	padding:0 .9375rem;
+.universal-bar img.logo{
+	height:45px;
 }
 
 .universal-bar ul.menu.inline-list{
