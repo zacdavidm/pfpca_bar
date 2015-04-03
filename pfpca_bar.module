@@ -11,8 +11,8 @@ function curPageURL() {
  return $base_root . request_uri();;
 }
 function pfpca_bar_page_alter(&$page){
-  $notification_source="http://new.pittsburgharts.org/notifications";
-  $feedback_source="http://new.pittsburgharts.org/feedback";
+  $notification_source="na:http://new.pittsburgharts.org/notifications";
+  $feedback_source="na:http://new.pittsburgharts.org/feedback";
 	$mod_path="/".drupal_get_path('module', 'pfpca_bar');
   $site_domain=check_plain($_SERVER['HTTP_HOST']);
 	$account_in_out;
