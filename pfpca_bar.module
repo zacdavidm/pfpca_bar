@@ -5,10 +5,14 @@ function curPageURL() {
  if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"]== "on") {$pageURL .= "s";}
  $pageURL .= "://";
  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
- return $pageURL;
+
+ global $base_root;
+
+ return $base_root . request_uri();;
 }
 function pfpca_bar_page_alter(&$page){
   $notification_source="http://new.pittsburgharts.org/notifications";
+  $feedback_source="http://new.pittsburgharts.org/feedback";
 	$mod_path="/".drupal_get_path('module', 'pfpca_bar');
   $site_domain=check_plain($_SERVER['HTTP_HOST']);
 	$account_in_out;
@@ -66,7 +70,7 @@ function pfpca_bar_page_alter(&$page){
   </div>';
   $feedback='
   <div id="feedback-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
-    <iframe class="fill-drawer" src="https://pfpca.org/feedback?response_type=embed&ref='.$feedback_ref.'"></iframe>
+    <iframe class="fill-drawer" src="'.$feedback_source.'?response_type=embed&ref_source='.$feedback_ref.'"></iframe>
     <a class="close-reveal-modal">&#215;</a>
   </div>
   ';

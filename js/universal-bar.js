@@ -1,7 +1,7 @@
 jQuery(function() {
-  jQuery("#toggle-sites-list, #toggle-notifications").on('click',function(){
+  /*jQuery("#toggle-sites-list, #toggle-notifications").on('click',function(){
 		jQuery(this).toggleClass('active-display-panel');
-	});
+	});*/
 
   /*function update_notifications(){
     jQuery.getJSON( "https://forgoodaccounts.pairsite.com/notifications/embed.json", function(response, status, jqXHR){
