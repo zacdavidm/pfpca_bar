@@ -8,11 +8,12 @@ function curPageURL() {
 
  global $base_root;
 
- return $base_root . request_uri();;
+ return $base_root . request_uri();
 }
 function pfpca_bar_page_alter(&$page){
-  $notification_source="na:http://new.pittsburgharts.org/notifications";
-  $feedback_source="na:http://new.pittsburgharts.org/feedback";
+  $notification_source="http://new.pittsburgharts.org/notifications";
+  $feedback_source="http://new.pittsburgharts.org/feedback";
+  $embed="?response_type=embed";
 	$mod_path="/".drupal_get_path('module', 'pfpca_bar');
   $site_domain=check_plain($_SERVER['HTTP_HOST']);
 	$account_in_out;
@@ -65,12 +66,12 @@ function pfpca_bar_page_alter(&$page){
 	</div>';
 	$notifications='
   <div id="notifications-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
-		<iframe class="fill-drawer" src="'.$notification_source.'/'.$site_domain.'?response_type=embed"></iframe>
+		<iframe class="fill-drawer" src="'.$notification_source.'/'.$site_domain.$embed.'"></iframe>
     <a class="close-reveal-modal">&#215;</a>
   </div>';
   $feedback='
   <div id="feedback-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
-    <iframe class="fill-drawer" src="'.$feedback_source.'?response_type=embed&ref_source='.$feedback_ref.'"></iframe>
+    <iframe class="fill-drawer" src="'.$feedback_source.$embed.'&ref_source='.$feedback_ref.'"></iframe>
     <a class="close-reveal-modal">&#215;</a>
   </div>
   ';
@@ -103,4 +104,41 @@ function pfpca_bar_page_alter(&$page){
     '#weight' => 26,
     );
 
+}
+
+// Create a variable to store the path to this module
+function pfpca_bar_theme_registry_alter(&$theme_registry) {
+  $module_path=drupal_get_path('module', 'pfpca_bar');
+  $theme_registry_copy = $theme_registry;
+  _theme_process_registry($theme_registry_copy, 'phptemplate', 'theme_engine', 'my_custom_theme', $module_path);
+  $theme_registry += array_diff_key($theme_registry_copy, $theme_registry);
+  // A list of templates the module will provide templates for
+  $hooks = array('page', 'html');
+  foreach ($hooks as $h) {
+    // Add the key 'theme paths' if it doesn't exist in this theme's registry
+    if (!isset($theme_registry[$h]['theme path'])) {
+      $theme_registry[$h]['theme path'] = array();
+    }
+    //Shift this module's directory to the top of the theme path list
+    if(is_array($theme_registry[$h]['theme path'])) {
+      $first_element = array_shift($theme_registry[$h]['theme path']);
+      if ($first_element) {
+        array_unshift($theme_registry[$h]['theme path'], $first_element, $module_path);
+      } else {
+        array_unshift($theme_registry[$h]['theme path'], $module_path);
+      }
+    }
+  }
+}
+
+function pfpca_bar_preprocess_page(&$variables) {
+  if (isset($_GET['response_type']) && $_GET['response_type'] == 'embed') {
+    $variables['theme_hook_suggestions'][] = 'page__embed';
+  }
+}
+
+function pfpca_bar_preprocess_html(&$variables) {
+  if (isset($_GET['response_type']) && $_GET['response_type'] == 'embed') {
+    $variables['theme_hook_suggestions'][] = 'html__embed';
+  }
 }
