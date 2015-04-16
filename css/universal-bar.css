@@ -95,6 +95,7 @@
 
 #sites-reveal-drawer ul.sites-list a img{
 	max-height:100px;
+	transform: rotate( .0001deg );
 }
 
 #sites-reveal-drawer ul.sites-list a span{
