@@ -63,11 +63,11 @@
 	border-left:0;
 	border-radius:0;
 	width:23rem;
-	max-width:100%;
+	max-width:calc(100% - 3rem);
 	height:100%;
 	transition:left .2s ease;
 	-webkit-overflow-scrolling:touch;
-	overflow:auto;
+	overflow:visible;
 }
 
 .reveal-modal.side-drawer.open{
@@ -113,4 +113,20 @@
 	-webkit-overflow-scrolling: touch;
 	overflow:auto;
 	border:0;
+}
+
+.side-drawer .action-panel{
+	margin-right: -2.5rem;
+	font-size: 2.5rem;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	margin-left: .5rem;
+	color: white;
+}
+
+.reveal-modal.side-drawer .close-reveal-modal{
+	font-size: 2.5rem;
+	position: static;
+	color: white;
 }

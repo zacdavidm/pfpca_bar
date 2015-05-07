@@ -62,17 +62,25 @@ function pfpca_bar_page_alter(&$page){
 		<div class="reveal-drawer-footer">
 			<a href="http://new.pittsburgharts.org">Site Descriptions</a>
 		</div>
-		<a class="close-reveal-modal">&#215;</a>
+    <div class="action-panel">
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
 	</div>';
 	$notifications='
   <div id="notifications-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
 		<iframe class="fill-drawer" src="'.$notification_source.'/'.$site_domain.$embed.'"></iframe>
-    <a class="close-reveal-modal">&#215;</a>
+    <div class="action-panel">
+      <a class="close-reveal-modal">&#215;</a>
+      <a target="_blank" href="'.$notification_source.'/'.$site_domain.'"><i class="fa fa-external-link"></i></a>
+    </div>
   </div>';
   $feedback='
   <div id="feedback-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
     <iframe class="fill-drawer" src="'.$feedback_source.$embed.'&ref_source='.$feedback_ref.'"></iframe>
-    <a class="close-reveal-modal">&#215;</a>
+    <div class="action-panel">
+      <a class="close-reveal-modal">&#215;</a>
+      <a target="_blank" href="'.$feedback_source.'"><i class="fa fa-external-link"></i></a>
+    </div>
   </div>
   ';
     $page['page_top']['pfpca_bar']=array(
