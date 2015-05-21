@@ -85,6 +85,11 @@
 	background-color:#fff;
 }
 
+#sites-reveal-drawer ul.sites-list{
+	max-height:100%;
+	overflow-y:auto;
+}
+
 #sites-reveal-drawer ul.sites-list li{
 	margin-bottom:1rem;
 }
